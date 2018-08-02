@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const readingListItem = document.createElement("li");
     readingListItem.textContent = `${inputTitle}, by ${inputAuthor}, ${inputCategory}`;
-    // output from form
 
     const readingList = document.createElement("ul");
 
@@ -19,9 +18,14 @@ document.addEventListener('DOMContentLoaded', () => {
     readingListDiv.appendChild(readingList);
     readingList.appendChild(readingListItem);
 
+    form.reset();
 
-
+    const deleteButton = document.querySelector("#button");
+    deleteButton.addEventListener("click", () => {
+      readingList.innerHTML = "";
+    });
   });
+
 
 
 
