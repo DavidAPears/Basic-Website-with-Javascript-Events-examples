@@ -2,6 +2,10 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log('JavaScript loaded');
 
   const form = document.querySelector("#new-item-form");
+  const readingList = document.createElement("ul");
+  const readingListDiv = document.querySelector("#reading-list");
+  readingListDiv.appendChild(readingList);
+
   form.addEventListener("submit", (event) => {
     event.preventDefault();
 
@@ -12,18 +16,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const readingListItem = document.createElement("li");
     readingListItem.textContent = `${inputTitle}, by ${inputAuthor}, ${inputCategory}`;
 
-    const readingList = document.createElement("ul");
-
-    const readingListDiv = document.querySelector("#reading-list");
-    readingListDiv.appendChild(readingList);
     readingList.appendChild(readingListItem);
+
 
     form.reset();
 
     const deleteButton = document.querySelector("#button");
     deleteButton.addEventListener("click", () => {
-      readingList.innerHTML = "";
+      console.dir(deleteButton);
+      readingList.innerHTML = '';
     });
+
   });
 
 

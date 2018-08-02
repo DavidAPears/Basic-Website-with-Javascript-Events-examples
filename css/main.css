@@ -18,3 +18,9 @@ h2 {
 label {
   font-weight: normal;
 }
+
+#reading-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+};
